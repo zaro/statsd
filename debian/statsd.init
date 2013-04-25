@@ -11,6 +11,9 @@
 
 PATH=$PATH:/usr/local/bin:/usr/bin:/bin
 NODE_BIN=$(which nodejs||which node)
+if [ -x /usr/node/0.10.5/bin/node ]; then
+NODE_BIN=/usr/node/0.10.5/bin/node
+fi
 
 if [ ! -x "$NODE_BIN" ]; then
   echo "Can't find executable nodejs or node in PATH=$PATH"
